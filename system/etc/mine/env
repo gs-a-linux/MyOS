@@ -1,0 +1,27 @@
+# KEY=VALUE per line; loaded by the launcher before it starts anything. Edit, rebuild the super.
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOME=/tmp
+LANG=C.UTF-8
+XDG_RUNTIME_DIR=/tmp/xdg
+MINE_LIB=/opt/mine/lib
+MINE_APPS=/opt/mine/apps
+QT_QPA_PLATFORM=linuxfb:fb=/dev/fb0
+QT_QPA_FB_HIDECURSOR=1
+QT_QPA_FONTDIR=/usr/share/fonts/truetype/dejavu
+# If the picture only covers part of the screen, force the size:
+#QT_QPA_PLATFORM=linuxfb:fb=/dev/fb0:size=800x1280
+# Touch is auto-detected by the launcher. To force or rotate it:
+#QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/event2:rotate=90
+
+# Display refresh (fb-pump). mtkfb only updates the panel when told to; Qt's linuxfb never tells it,
+# so the picture froze after a few seconds. mode: pan | put | both | none
+MINE_PUMP_MODE=pan
+MINE_PUMP_HZ=30
+# 1 = blank+unblank the display once before the UI starts. OFF by default: on some MediaTek kernels
+# a blank/unblank can crash or power the tablet off. (The Display app has a button to try it live.)
+MINE_FB_RESET=0
+
+# Splash screen (/sbin/splash), shown at boot and while every app starts. 0 = off.
+MINE_SPLASH=1
+MINE_SPLASH_TITLE=My OS
+# Own logo: put a binary PPM (P6) at system/etc/mine/splash.ppm and rebuild.

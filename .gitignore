@@ -1,0 +1,13 @@
+build/
+out/
+__pycache__/
+*.pyc
+bin/
+!out/
+out/*
+!build/
+build/*
+!build/cache/
+build/cache/*
+build/rootfs/
+
